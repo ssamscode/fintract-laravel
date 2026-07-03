@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fullcalendar/core/index.css";
+@import "@fullcalendar/daygrid/index.css";
+
+/* ===========================================
+   GOOGLE FONT
+=========================================== */
+
+:root {
+    --ft-primary: #235347;
+    --ft-primary-dark: #193d34;
+
+    --ft-secondary: #8eb69e;
+
+    --ft-background: #f5f7f6;
+
+    --ft-white: #ffffff;
+
+    --ft-text: #263238;
+
+    --ft-border: #d8e3dc;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    color: var(--ft-text);
+
+    background: var(--ft-background);
+}
+
+/* ===========================================
+   FINTRACK COLORS
+=========================================== */
+
+:root {
+    --primary: #235347;
+    --primary-dark: #1a4036;
+    --secondary: #8eb69e;
+
+    --background: #f4f8f5;
+
+    --white: #ffffff;
+
+    --text: #1f2937;
+}
+
+/* ===========================================
+   BUTTON
+=========================================== */
+
+.btn-primary {
+    background: var(--primary);
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+/* ===========================================
+   CARD
+=========================================== */
+
+.auth-card {
+    background: white;
+
+    border-radius: 28px;
+
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================================
+   INPUT
+=========================================== */
+
+.form-input {
+    border-radius: 18px;
+}
+
+.ft-radius {
+    border-radius: 24px;
+}
+
+.ft-shadow {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.ft-button {
+    background: var(--ft-primary);
+
+    color: white;
+
+    border-radius: 18px;
+
+    transition: 0.3s;
+}
+
+.ft-button:hover {
+    background: var(--ft-primary-dark);
+}
+
+.ft-input {
+    border: 1px solid var(--ft-border);
+
+    border-radius: 18px;
+
+    padding: 16px 18px;
+}
+
+.ft-input:focus {
+    border-color: var(--ft-primary);
+}
