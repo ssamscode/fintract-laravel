@@ -16,9 +16,9 @@
     </div>
 
     {{-- Profile Card --}}
-    <div class="bg-white rounded-3xl shadow-sm p-8">
+    <div class="bg-white rounded-3xl shadow-sm p-5 md:p-8">
 
-        <div class="flex items-center gap-6">
+        <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
 
             {{-- Avatar --}}
             <a
@@ -70,7 +70,7 @@
     </div>
 
     {{-- Statistik --}}
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <div class="bg-white rounded-3xl shadow-sm p-6">
 

@@ -24,7 +24,7 @@ Welcome back, {{ Auth::user()->name }}
     </div>
 
     {{-- Stat Cards --}}
-    <div class="grid grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <div class="bg-white rounded-3xl p-6 shadow-sm">
 
@@ -78,16 +78,16 @@ Welcome back, {{ Auth::user()->name }}
 
     {{-- Row 2 --}}
 {{-- Row 2 --}}
-<div class="grid grid-cols-3 gap-6">
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
 
     {{-- Financial Chart --}}
-    <div class="col-span-2 bg-white rounded-3xl p-8 shadow-sm">
+   <div class="xl:col-span-2 bg-white rounded-3xl p-5 md:p-8 shadow-sm">
 
         <h3 class="text-xl font-semibold mb-6">
             Financial Chart
         </h3>
 
-        <div class="relative h-80">
+        <div class="relative h-[300px] md:h-80">
 
             <canvas id="financeChart"></canvas>
 
@@ -96,7 +96,7 @@ Welcome back, {{ Auth::user()->name }}
     </div>
 
     {{-- Quick Summary --}}
-    <div class="bg-white rounded-3xl p-8 shadow-sm">
+   <div class="bg-white rounded-3xl p-5 md:p-8 shadow-sm">
 
         <h3 class="text-xl font-semibold mb-6">
             Quick Summary
@@ -143,10 +143,10 @@ Welcome back, {{ Auth::user()->name }}
 </div>
 
 {{-- Row 3 --}}
-<div class="grid grid-cols-3 gap-6">
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
 
     {{-- Latest Transactions --}}
-    <div class="col-span-2 bg-white rounded-3xl p-8 shadow-sm">
+   <div class="xl:col-span-2 bg-white rounded-3xl p-5 md:p-8 shadow-sm">
 
         <div class="flex justify-between items-center mb-6">
 
@@ -163,7 +163,9 @@ Welcome back, {{ Auth::user()->name }}
 
         </div>
 
-        <table class="w-full">
+       <div class="overflow-x-auto">
+
+<table class="w-full min-w-[650px]">
 
             <thead>
 
@@ -246,11 +248,12 @@ Welcome back, {{ Auth::user()->name }}
             </tbody>
 
         </table>
+        </div>
 
     </div>
 
 {{-- Calendar --}}
-<div class="bg-white rounded-3xl shadow-sm p-8">
+<div class="bg-white rounded-3xl shadow-sm p-5 md:p-8">
 
     <h3 class="text-xl font-semibold mb-6">
         Calendar

@@ -5,24 +5,25 @@
 <div class="max-w-7xl mx-auto p-8">
 
     {{-- Header --}}
-    <div class="flex items-center justify-between mb-8">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 lg:gap-0 mb-8">
 
         <div>
 
             <h1 class="text-3xl font-bold text-[#235347]">
                 Riwayat Transaksi
-                <div class="flex justify-between items-center mb-6">
+                <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 mb-6">
 
     <form
         action="{{ route('transactions.index') }}"
-        method="GET">
+        method="GET"
+        class="w-full sm:w-auto">
 
         <input
             type="text"
             name="search"
             value="{{ request('search') }}"
             placeholder="Cari judul atau deskripsi..."
-            class="w-80 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#235347] focus:outline-none">
+            class="w-full sm:w-80 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#235347] focus:outline-none">
 
     </form>
 

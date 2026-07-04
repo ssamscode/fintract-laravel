@@ -1,11 +1,19 @@
-<header class="bg-white border-b border-gray-200 px-8 py-5">
+<header class="bg-white border-b border-gray-200 px-4 md:px-8 py-4 md:py-5">
 
-    <div class="flex items-center">
+<div class="flex items-center gap-4">
+{{-- Hamburger --}}
+<button
+    @click="sidebarOpen = true"
+    class="lg:hidden w-11 h-11 rounded-xl bg-[#235347] text-white flex items-center justify-center">
+
+    ☰
+
+</button>
 
         {{-- Judul hanya tampil di Dashboard --}}
         @if(request()->routeIs('dashboard'))
 
-            <div>
+            <div class="min-w-0">
 
                 <h2 class="text-2xl font-bold text-[#235347]">
                     Dashboard
@@ -20,7 +28,7 @@
         @endif
 
         {{-- Right Menu --}}
-        <div class="ml-auto flex items-center gap-6">
+        <div class="ml-auto flex items-center gap-2 md:gap-6">
 
             {{-- Search --}}
             <form action="{{ route('transactions.index') }}" method="GET">
@@ -30,14 +38,14 @@
                     name="search"
                     value="{{ request('search') }}"
                     placeholder="Cari transaksi..."
-                    class="w-80 px-5 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8EB69E]">
+                    class="hidden sm:block w-80 px-5 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8EB69E]">
 
             </form>
 
             {{-- Bantuan --}}
             <a
                 href="{{ route('help.index') }}"
-                class="w-12 h-12 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition">
+               class="hidden md:flex w-12 h-12 rounded-xl bg-gray-100 hover:bg-gray-200 items-center justify-center transition"
 
                 ❓
 
@@ -68,7 +76,7 @@
 
 @endif
 
-                <div>
+               <div class="hidden md:block">
 
                     <p class="font-semibold text-gray-800">
 

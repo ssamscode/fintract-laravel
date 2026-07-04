@@ -1,7 +1,16 @@
-<aside class="w-72 min-h-screen bg-[#235347] text-white flex flex-col">
+<aside
+    :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
+    class="fixed top-0 left-0 z-50
+           w-72 h-screen
+           bg-[#235347]
+           text-white
+           flex flex-col
+           shadow-xl
+           transform transition-transform duration-300
+           overflow-y-auto">
 
     {{-- Logo --}}
-    <div class="px-8 py-8 border-b border-white/10">
+   <div class="px-6 py-6 border-b border-white/10">
 
         <a href="{{ route('dashboard') }}" class="flex items-center gap-4">
 
@@ -27,7 +36,7 @@
     </div>
 
     {{-- Menu --}}
-    <nav class="flex-1 px-5 py-8">
+   <nav class="flex-1 px-5 py-6 overflow-y-auto">
 
         {{-- Main Menu --}}
         <p class="text-xs uppercase tracking-widest text-green-200 mb-4">
@@ -38,6 +47,7 @@
 
             {{-- Dashboard --}}
             <a href="{{ route('dashboard') }}"
+                @click="sidebarOpen = false"
                 class="flex items-center gap-3 px-5 py-4 rounded-xl transition
                 {{ request()->routeIs('dashboard')
                     ? 'bg-[#8EB69E] text-[#235347] font-semibold'
@@ -49,6 +59,7 @@
 
             {{-- Tambah Transaksi --}}
             <a href="{{ route('transactions.create') }}"
+                @click="sidebarOpen = false"
                 class="flex items-center gap-3 px-5 py-4 rounded-xl transition
                 {{ request()->routeIs('transactions.create')
                     ? 'bg-[#8EB69E] text-[#235347] font-semibold'
@@ -60,6 +71,7 @@
 
             {{-- Riwayat Transaksi --}}
             <a href="{{ route('transactions.index') }}"
+                @click="sidebarOpen = false"
                 class="flex items-center gap-3 px-5 py-4 rounded-xl transition
                 {{ request()->routeIs('transactions.index')
                     ? 'bg-[#8EB69E] text-[#235347] font-semibold'
@@ -71,6 +83,7 @@
 
             {{-- Laporan --}}
             <a href="{{ route('laporan.index') }}"
+                @click="sidebarOpen = false"
                 class="flex items-center gap-3 px-5 py-4 rounded-xl transition
                 {{ request()->routeIs('laporan.*')
                     ? 'bg-[#8EB69E] text-[#235347] font-semibold'
@@ -91,6 +104,7 @@
 
             {{-- Profil Saya --}}
             <a href="{{ route('profile.index') }}"
+                @click="sidebarOpen = false"
                 class="flex items-center gap-3 px-5 py-4 rounded-xl transition
                 {{ request()->routeIs('profile.index')
                     ? 'bg-[#8EB69E] text-[#235347] font-semibold'
@@ -102,6 +116,7 @@
 
             {{-- Pengaturan Akun --}}
             <a href="{{ route('profile.edit') }}"
+                @click="sidebarOpen = false"
                 class="flex items-center gap-3 px-5 py-4 rounded-xl transition
                 {{ request()->routeIs('profile.edit')
                     ? 'bg-[#8EB69E] text-[#235347] font-semibold'
@@ -193,7 +208,7 @@
     </nav>
 
     {{-- Footer --}}
-    <div class="p-6 border-t border-white/10">
+    <div class="p-6 border-t border-white/10 mt-auto">
 
         <p class="text-sm text-green-200 text-center">
             © {{ date('Y') }} FinTrack

@@ -36,7 +36,7 @@
 </div>
 
     {{-- Stat Card --}}
-    <div class="grid grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <div class="bg-white rounded-3xl shadow-sm p-6">
 
@@ -89,9 +89,9 @@
     </div>
 
     {{-- Chart + Summary --}}
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        <div class="col-span-2 bg-white rounded-3xl shadow-sm p-8">
+        <div class="lg:col-span-2 bg-white rounded-3xl shadow-sm p-5 md:p-8">
 
             <h3 class="text-xl font-semibold mb-6">
 
@@ -162,7 +162,7 @@
     </div>
 
     {{-- Riwayat --}}
-    <div class="bg-white rounded-3xl shadow-sm p-8">
+    <div class="bg-white rounded-3xl shadow-sm p-5 md:p-8">
 
         <h3 class="text-xl font-semibold mb-6">
 
@@ -170,7 +170,9 @@
 
         </h3>
 
-        <table class="w-full">
+        <div class="overflow-x-auto">
+
+            <table class="w-full">
 
             <thead>
 
@@ -253,6 +255,8 @@
             </tbody>
 
         </table>
+
+        </div>
 
         <div class="mt-6">
 

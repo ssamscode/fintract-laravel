@@ -28,19 +28,35 @@
 
 <body class="bg-gray-100 font-[Poppins] overflow-hidden">
 
-<div class="flex h-screen">
+<div class="flex h-screen" x-data="{ sidebarOpen: false }">
 
     {{-- Sidebar --}}
     @include('partials.app-sidebar')
 
+    {{-- Overlay --}}
+    <div x-show="sidebarOpen" 
+         @click="sidebarOpen = false" 
+         class="fixed inset-0 z-40 bg-black/50 lg:hidden"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         style="display: none;"></div>
+
     {{-- Content --}}
-    <div class="flex-1 min-w-0 flex flex-col">
+    <div class="flex-1 min-w-0 flex flex-col lg:pl-72">
 
         @if(request()->routeIs('dashboard'))
             @include('partials.app-navbar')
+        @else
+            <div class="lg:hidden">
+                @include('partials.app-navbar')
+            </div>
         @endif
 
-        <main class="flex-1 overflow-y-auto overflow-x-hidden p-8">
+        <main class="flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-6 lg:p-8">
 
             @yield('content')
 
